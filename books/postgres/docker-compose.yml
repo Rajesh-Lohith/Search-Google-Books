@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  postgres-books:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=admin
+      - POSTGRES_DB=boot
+    volumes:
+      - postgres-book-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-book-data:
+    driver: local
